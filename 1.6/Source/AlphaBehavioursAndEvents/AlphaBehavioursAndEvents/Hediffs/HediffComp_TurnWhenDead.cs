@@ -22,6 +22,10 @@ namespace AlphaBehavioursAndEvents
             //base.Notify_PawnDied();
             float severityToTurn = Props.severityToTurn;
 
+            if (this.parent.pawn.Corpse == null)
+            {
+                return;
+            }
             Map map = this.parent.pawn.Corpse.Map;
             if (map != null && this.parent.Severity> severityToTurn) {
                 Gender oldGender = this.parent.pawn.gender;
